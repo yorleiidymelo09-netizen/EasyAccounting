@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EasyAccounting | Dashboard</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="dashboard-body">
+
+    <div class="app-layout">
+
+        <!-- Menú lateral -->
+        <aside class="sidebar">
+
+            <div class="sidebar-logo">
+                <img src="img/logo.png" alt="Logo de EasyAccounting">
+            </div>
+
+            <div class="usuario">
+                <div class="avatar">JD</div>
+
+                <div>
+                    <strong>Juan Díaz</strong>
+                    <span>Administrador</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-menu">
+
+                <a class="activo" href="dashboard.html">
+                    <span>▦</span>
+                    Dashboard
+                </a>
+
+                <a href="usuarios.html">
+                    <span>👥</span>
+                    Gestión de usuarios
+                </a>
+
+                <a href="clientes.html">
+                    <span>🏢</span>
+                    Clientes
+                </a>
+
+                <a href="movimientos.html">
+                    <span>⇄</span>
+                    Movimientos
+                </a>
+
+                <a href="reportes.html">
+                    <span>📊</span>
+                    Reportes
+                </a>
+
+                <a href="facturas.html">
+                    <span>🧾</span>
+                    Facturación
+                </a>
+
+                <a href="configuracion.html">
+                    <span>⚙️</span>
+                    Configuración
+                </a>
+
+                <a href="index.html">
+                    <span>↪</span>
+                    Cerrar sesión
+                </a>
+
+            </nav>
+
+        </aside>
+
+        <!-- Contenido principal -->
+        <main class="dashboard-main">
+
+            <!-- Barra superior -->
+            <header class="topbar">
+
+                <div class="topbar-busqueda">
+                    <input
+                        type="search"
+                        placeholder="Buscar en EasyAccounting"
+                        aria-label="Buscar en EasyAccounting"
+                    >
+                </div>
+
+                <div class="topbar-acciones">
+
+                    <button
+                        class="notificacion"
+                        type="button"
+                        aria-label="Notificaciones"
+                    >
+                        🔔
+                        <span>3</span>
+                    </button>
+
+                    <div class="perfil-usuario">
+                        <div class="perfil-avatar">JD</div>
+
+                        <div>
+                            <strong>Juan Díaz</strong>
+                            <small>Administrador</small>
+                        </div>
+                    </div>
+
+                </div>
+
+            </header>
+
+            <!-- Encabezado -->
+            <section class="encabezado-dashboard">
+
+                <div>
+                    <h1>Dashboard financiero</h1>
+
+                    <p>
+                        Bienvenido, Juan Díaz. Consulta el estado general
+                        de EasyAccounting.
+                    </p>
+                </div>
+
+                <div class="fecha">
+                    10 de julio de 2026
+                </div>
+
+            </section>
+
+            <!-- Tarjetas de resumen -->
+            <section class="resumen-grid">
+
+                <article class="resumen-card">
+
+                    <div class="resumen-icon ingreso-icon">↑</div>
+
+                    <div>
+                        <span>Ingresos</span>
+                        <h2>$18.500.000</h2>
+                        <small>+12 % este mes</small>
+                    </div>
+
+                </article>
+
+                <article class="resumen-card">
+
+                    <div class="resumen-icon gasto-icon">↓</div>
+
+                    <div>
+                        <span>Gastos</span>
+                        <h2>$12.800.000</h2>
+                        <small>8 % este mes</small>
+                    </div>
+
+                </article>
+
+                <article class="resumen-card">
+
+                    <div class="resumen-icon balance-icon">✓</div>
+
+                    <div>
+                        <span>Balance</span>
+                        <h2>$5.700.000</h2>
+                        <small>Resultado positivo</small>
+                    </div>
+
+                </article>
+
+                <article class="resumen-card">
+
+                    <div class="resumen-icon usuario-icon">👤</div>
+
+                    <div>
+                        <span>Usuarios</span>
+                        <h2>25</h2>
+                        <small>Usuarios activos</small>
+                    </div>
+
+                </article>
+
+            </section>
+
+            <!-- Gráfica y accesos rápidos -->
+            <section class="dashboard-columns">
+
+                <article class="panel panel-grafica">
+
+                    <div class="panel-header">
+
+                        <div>
+                            <h2>Comportamiento financiero</h2>
+                            <span>Ingresos y gastos durante 2026</span>
+                        </div>
+
+                    </div>
+
+                    <div class="contenedor-grafica">
+                        <canvas id="graficaFinanciera"></canvas>
+                    </div>
+
+                </article>
+
+                <article class="panel">
+
+ <div class="acciones-grid">
+
+    <a href="movimientos.html" class="accion-card">
+        <strong>Registrar ingreso</strong>
+        <span>Agregar una entrada de dinero</span>
+    </a>
+
+    <a href="movimientos.html" class="accion-card">
+        <strong>Registrar gasto</strong>
+        <span>Agregar una salida de dinero</span>
+    </a>
+
+    <a href="facturas.html" class="accion-card">
+        <strong>Nueva factura</strong>
+        <span>Crear una factura para un cliente</span>
+    </a>
+
+    <a href="clientes.html" class="accion-card">
+        <strong>Nuevo cliente</strong>
+        <span>Registrar información comercial</span>
+    </a>
+
+</div>
+
+                </article>
+
+            </section>
+
+            <!-- Tabla de movimientos -->
+            <section class="panel movimientos-panel">
+
+                <div class="panel-header">
+                    <h2>Últimos movimientos</h2>
+                    <a href="movimientos.html">Ver todos</a>
+                </div>
+
+                <div class="tabla-responsive">
+
+                    <table class="tabla-dashboard">
+
+                        <thead>
+                            <tr>
+                                <th>Fecha</th>
+                                <th>Concepto</th>
+                                <th>Tipo</th>
+                                <th>Valor</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>08/07/2026</td>
+                                <td>Venta de servicios</td>
+
+                                <td>
+                                    <span class="tipo ingreso">
+                                        Ingreso
+                                    </span>
+                                </td>
+
+                                <td>$2.500.000</td>
+
+                                <td>
+                                    <span class="estado">
+                                        Completado
+                                    </span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>07/07/2026</td>
+                                <td>Pago de servicios públicos</td>
+
+                                <td>
+                                    <span class="tipo gasto">
+                                        Gasto
+                                    </span>
+                                </td>
+
+                                <td>$480.000</td>
+
+                                <td>
+                                    <span class="estado">
+                                        Completado
+                                    </span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>05/07/2026</td>
+                                <td>Compra de papelería</td>
+
+                                <td>
+                                    <span class="tipo gasto">
+                                        Gasto
+                                    </span>
+                                </td>
+
+                                <td>$210.000</td>
+
+                                <td>
+                                    <span class="estado">
+                                        Completado
+                                    </span>
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- Librería para la gráfica -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        const grafica = document.getElementById("graficaFinanciera");
+
+        new Chart(grafica, {
+            type: "line",
+
+            data: {
+                labels: ["Feb", "Mar", "Abr", "May", "Jun", "Jul"],
+
+                datasets: [
+                    {
+                        label: "Ingresos",
+                        data: [
+                            12500000,
+                            13800000,
+                            14900000,
+                            16000000,
+                            17500000,
+                            18500000
+                        ],
+                        borderColor: "#16A34A",
+                        backgroundColor: "rgba(22, 163, 74, 0.15)",
+                        borderWidth: 3,
+                        pointRadius: 4,
+                        pointHoverRadius: 7,
+                        fill: true,
+                        tension: 0.4
+                    },
+
+                    {
+                        label: "Gastos",
+                        data: [
+                            9000000,
+                            9800000,
+                            10200000,
+                            11100000,
+                            12000000,
+                            12800000
+                        ],
+                        borderColor: "#DC2626",
+                        backgroundColor: "rgba(220, 38, 38, 0.12)",
+                        borderWidth: 3,
+                        pointRadius: 4,
+                        pointHoverRadius: 7,
+                        fill: true,
+                        tension: 0.4
+                    }
+                ]
+            },
+
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+
+                interaction: {
+                    mode: "index",
+                    intersect: false
+                },
+
+                plugins: {
+                    legend: {
+                        position: "top"
+                    },
+
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.dataset.label + ": $" +
+                                    context.parsed.y.toLocaleString("es-CO");
+                            }
+                        }
+                    }
+                },
+
+                scales: {
+                    x: {
+                        grid: {
+                            display: false
+                        }
+                    },
+
+                    y: {
+                        beginAtZero: true,
+
+                        ticks: {
+                            callback: function(valor) {
+                                return "$" + (valor / 1000000) + " M";
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

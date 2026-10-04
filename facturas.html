@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EasyAccounting | Facturación</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="dashboard-body">
+
+    <div class="app-layout">
+
+        <aside class="sidebar">
+
+            <div class="sidebar-logo">
+                <img src="img/logo.png" alt="Logo EasyAccounting">
+            </div>
+
+            <div class="usuario">
+                <div class="avatar">JD</div>
+
+                <div>
+                    <strong>Juan Díaz</strong>
+                    <span>Administrador</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-menu">
+
+                <a href="dashboard.html">
+                    <span>▦</span>
+                    Dashboard
+                </a>
+
+                <a href="usuarios.html">
+                    <span>👥</span>
+                    Gestión de usuarios
+                </a>
+
+                <a href="movimientos.html">
+                    <span>⇄</span>
+                    Movimientos
+                </a>
+
+                <a href="reportes.html">
+                    <span>📊</span>
+                    Reportes
+                </a>
+
+                <a class="activo" href="facturas.html">
+                    <span>🧾</span>
+                    Facturación
+                </a>
+
+                <a href="index.html">
+                    <span>↪</span>
+                    Cerrar sesión
+                </a>
+
+            </nav>
+
+        </aside>
+
+        <main class="dashboard-main">
+
+            <header class="topbar">
+
+                <div class="topbar-busqueda">
+                    <input
+                        type="search"
+                        placeholder="Buscar factura"
+                        aria-label="Buscar factura"
+                    >
+                </div>
+
+                <div class="topbar-acciones">
+
+                    <button class="notificacion" type="button" aria-label="Notificaciones">
+                        🔔
+                        <span>3</span>
+                    </button>
+
+                    <div class="perfil-usuario">
+                        <div class="perfil-avatar">JD</div>
+
+                        <div>
+                            <strong>Juan Díaz</strong>
+                            <small>Administrador</small>
+                        </div>
+                    </div>
+
+                </div>
+
+            </header>
+
+            <section class="encabezado-dashboard">
+
+                <div>
+                    <h1>Facturación</h1>
+
+                    <p>
+                        Consulta y administra las facturas emitidas por EasyAccounting.
+                    </p>
+                </div>
+
+                <a class="boton-nuevo" href="#">
+                    + Nueva factura
+                </a>
+
+            </section>
+
+            <section class="resumen-grid facturas-resumen">
+
+                <article class="resumen-card">
+                    <div class="resumen-icon ingreso-icon">✓</div>
+
+                    <div>
+                        <span>Facturas pagadas</span>
+                        <h2>38</h2>
+                        <small>Total del mes</small>
+                    </div>
+                </article>
+
+                <article class="resumen-card">
+                    <div class="resumen-icon usuario-icon">⏳</div>
+
+                    <div>
+                        <span>Facturas pendientes</span>
+                        <h2>12</h2>
+                        <small>Por cobrar</small>
+                    </div>
+                </article>
+
+                <article class="resumen-card">
+                    <div class="resumen-icon gasto-icon">!</div>
+
+                    <div>
+                        <span>Facturas vencidas</span>
+                        <h2>4</h2>
+                        <small>Requieren seguimiento</small>
+                    </div>
+                </article>
+
+            </section>
+
+            <section class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <h2>Facturas registradas</h2>
+                        <span>Listado general de facturación</span>
+                    </div>
+
+                    <select class="filtro-usuarios">
+                        <option>Todos los estados</option>
+                        <option>Pagadas</option>
+                        <option>Pendientes</option>
+                        <option>Vencidas</option>
+                    </select>
+
+                </div>
+
+                <div class="tabla-responsive">
+
+                    <table class="tabla-dashboard">
+
+                        <thead>
+                            <tr>
+                                <th>Número</th>
+                                <th>Cliente</th>
+                                <th>Fecha</th>
+                                <th>Vencimiento</th>
+                                <th>Total</th>
+                                <th>Estado</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>FV-00125</td>
+                                <td>Comercial SAS</td>
+                                <td>10/07/2026</td>
+                                <td>25/07/2026</td>
+                                <td>$2.500.000</td>
+                                <td>
+                                    <span class="estado-factura pagada">
+                                        Pagada
+                                    </span>
+                                </td>
+                                <td>
+                                    <button class="boton-accion editar">
+                                        Ver
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>FV-00124</td>
+                                <td>Distribuciones LTDA</td>
+                                <td>09/07/2026</td>
+                                <td>24/07/2026</td>
+                                <td>$980.000</td>
+                                <td>
+                                    <span class="estado-factura pendiente">
+                                        Pendiente
+                                    </span>
+                                </td>
+                                <td>
+                                    <button class="boton-accion editar">
+                                        Ver
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>FV-00123</td>
+                                <td>Servicios del Norte</td>
+                                <td>03/07/2026</td>
+                                <td>08/07/2026</td>
+                                <td>$1.450.000</td>
+                                <td>
+                                    <span class="estado-factura vencida">
+                                        Vencida
+                                    </span>
+                                </td>
+                                <td>
+                                    <button class="boton-accion editar">
+                                        Ver
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>FV-00122</td>
+                                <td>Inversiones ABC</td>
+                                <td>01/07/2026</td>
+                                <td>16/07/2026</td>
+                                <td>$3.200.000</td>
+                                <td>
+                                    <span class="estado-factura pagada">
+                                        Pagada
+                                    </span>
+                                </td>
+                                <td>
+                                    <button class="boton-accion editar">
+                                        Ver
+                                    </button>
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

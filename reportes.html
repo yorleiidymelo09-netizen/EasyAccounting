@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EasyAccounting | Reportes financieros</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="dashboard-body">
+
+    <div class="app-layout">
+
+        <aside class="sidebar">
+
+            <div class="sidebar-logo">
+                <img src="img/logo.png" alt="Logo EasyAccounting">
+            </div>
+
+            <div class="usuario">
+                <div class="avatar">JD</div>
+
+                <div>
+                    <strong>Juan Díaz</strong>
+                    <span>Administrador</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-menu">
+
+                <a href="dashboard.html">
+                    <span>▦</span>
+                    Dashboard
+                </a>
+
+                <a href="usuarios.html">
+                    <span>👥</span>
+                    Gestión de usuarios
+                </a>
+
+                <a href="movimientos.html">
+                    <span>⇄</span>
+                    Movimientos
+                </a>
+
+                <a class="activo" href="reportes.html">
+                    <span>📊</span>
+                    Reportes
+                </a>
+
+                <a href="index.html">
+                    <span>↪</span>
+                    Cerrar sesión
+                </a>
+
+            </nav>
+
+        </aside>
+
+        <main class="dashboard-main">
+
+            <header class="topbar">
+
+                <div class="topbar-busqueda">
+                    <input
+                        type="search"
+                        placeholder="Buscar reporte"
+                        aria-label="Buscar reporte"
+                    >
+                </div>
+
+                <div class="topbar-acciones">
+
+                    <button class="notificacion" type="button" aria-label="Notificaciones">
+                        🔔
+                        <span>3</span>
+                    </button>
+
+                    <div class="perfil-usuario">
+                        <div class="perfil-avatar">JD</div>
+
+                        <div>
+                            <strong>Juan Díaz</strong>
+                            <small>Administrador</small>
+                        </div>
+                    </div>
+
+                </div>
+
+            </header>
+
+            <section class="encabezado-dashboard">
+
+                <div>
+                    <h1>Reportes financieros</h1>
+
+                    <p>
+                        Consulta, genera y exporta la información financiera
+                        de EasyAccounting.
+                    </p>
+                </div>
+
+                <a class="boton-nuevo" href="#">
+                    + Generar reporte
+                </a>
+
+            </section>
+
+            <section class="resumen-grid reportes-resumen">
+
+                <article class="resumen-card">
+                    <div class="resumen-icon ingreso-icon">📈</div>
+
+                    <div>
+                        <span>Ingresos del mes</span>
+                        <h2>$18.500.000</h2>
+                        <small>12 % más que el mes anterior</small>
+                    </div>
+                </article>
+
+                <article class="resumen-card">
+                    <div class="resumen-icon gasto-icon">📉</div>
+
+                    <div>
+                        <span>Gastos del mes</span>
+                        <h2>$12.800.000</h2>
+                        <small>8 % menos que el mes anterior</small>
+                    </div>
+                </article>
+
+                <article class="resumen-card">
+                    <div class="resumen-icon balance-icon">💰</div>
+
+                    <div>
+                        <span>Balance general</span>
+                        <h2>$5.700.000</h2>
+                        <small>Resultado positivo</small>
+                    </div>
+                </article>
+
+            </section>
+
+            <section class="dashboard-columns">
+
+                <article class="panel">
+
+                    <div class="panel-header">
+                        <div>
+                            <h2>Indicadores financieros</h2>
+                            <span>Comportamiento mensual</span>
+                        </div>
+                    </div>
+
+                    <div class="grafico-reportes">
+
+                        <div class="indicador-item">
+                            <div class="indicador-texto">
+                                <span>Ingresos</span>
+                                <strong>$18.500.000</strong>
+                            </div>
+
+                            <div class="barra-fondo">
+                                <div class="barra ingreso-barra" style="width: 88%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="indicador-item">
+                            <div class="indicador-texto">
+                                <span>Gastos</span>
+                                <strong>$12.800.000</strong>
+                            </div>
+
+                            <div class="barra-fondo">
+                                <div class="barra gasto-barra" style="width: 61%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="indicador-item">
+                            <div class="indicador-texto">
+                                <span>Balance</span>
+                                <strong>$5.700.000</strong>
+                            </div>
+
+                            <div class="barra-fondo">
+                                <div class="barra balance-barra" style="width: 34%;"></div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <article class="panel">
+
+                    <div class="panel-header">
+                        <div>
+                            <h2>Acciones</h2>
+                            <span>Opciones de exportación</span>
+                        </div>
+                    </div>
+
+                    <div class="acciones-reportes">
+
+                        <button type="button" class="boton-reporte pdf">
+                            Descargar PDF
+                        </button>
+
+                        <button type="button" class="boton-reporte excel">
+                            Exportar Excel
+                        </button>
+
+                        <button type="button" class="boton-reporte imprimir">
+                            Imprimir reporte
+                        </button>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+            <section class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <h2>Reportes disponibles</h2>
+                        <span>Documentos generados por el sistema</span>
+                    </div>
+
+                    <select class="filtro-usuarios">
+                        <option>Todos los reportes</option>
+                        <option>Contables</option>
+                        <option>Financieros</option>
+                        <option>Tributarios</option>
+                    </select>
+
+                </div>
+
+                <div class="tabla-responsive">
+
+                    <table class="tabla-dashboard">
+
+                        <thead>
+                            <tr>
+                                <th>Reporte</th>
+                                <th>Categoría</th>
+                                <th>Fecha</th>
+                                <th>Período</th>
+                                <th>Estado</th>
+                                <th>Acción</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>Balance general</td>
+                                <td>Financiero</td>
+                                <td>10/07/2026</td>
+                                <td>Julio 2026</td>
+                                <td><span class="estado">Disponible</span></td>
+                                <td>
+                                    <button class="boton-accion editar">
+                                        Ver
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Estado de resultados</td>
+                                <td>Contable</td>
+                                <td>10/07/2026</td>
+                                <td>Julio 2026</td>
+                                <td><span class="estado">Disponible</span></td>
+                                <td>
+                                    <button class="boton-accion editar">
+                                        Ver
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Flujo de caja</td>
+                                <td>Financiero</td>
+                                <td>09/07/2026</td>
+                                <td>Junio 2026</td>
+                                <td><span class="estado">Disponible</span></td>
+                                <td>
+                                    <button class="boton-accion editar">
+                                        Ver
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Libro diario</td>
+                                <td>Contable</td>
+                                <td>08/07/2026</td>
+                                <td>Junio 2026</td>
+                                <td><span class="estado">Disponible</span></td>
+                                <td>
+                                    <button class="boton-accion editar">
+                                        Ver
+                                    </button>
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EasyAccounting | Gestión de usuarios</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="dashboard-body">
+
+    <div class="app-layout">
+
+        <aside class="sidebar">
+
+            <div class="sidebar-logo">
+                <img src="img/logo.png" alt="Logo EasyAccounting">
+            </div>
+
+            <div class="usuario">
+                <div class="avatar">JD</div>
+
+                <div>
+                    <strong>Juan Díaz</strong>
+                    <span>Administrador</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-menu">
+
+                <a href="dashboard.html">
+                    <span>▦</span>
+                    Dashboard
+                </a>
+
+                <a class="activo" href="usuarios.html">
+                    <span>👥</span>
+                    Gestión de usuarios
+                </a>
+
+                <a href="movimientos.html">
+                    <span>⇄</span>
+                    Movimientos
+                </a>
+
+                <a href="reportes.html">
+                    <span>📊</span>
+                    Reportes
+                </a>
+
+                <a href="index.html">
+                    <span>↪</span>
+                    Cerrar sesión
+                </a>
+
+            </nav>
+
+        </aside>
+
+        <main class="dashboard-main">
+
+            <header class="topbar">
+
+                <div class="topbar-busqueda">
+                    <input
+                        type="search"
+                        placeholder="Buscar usuario"
+                        aria-label="Buscar usuario"
+                    >
+                </div>
+
+                <div class="topbar-acciones">
+
+                    <button
+                        class="notificacion"
+                        type="button"
+                        aria-label="Notificaciones"
+                    >
+                        🔔
+                        <span>3</span>
+                    </button>
+
+                    <div class="perfil-usuario">
+                        <div class="perfil-avatar">JD</div>
+
+                        <div>
+                            <strong>Juan Díaz</strong>
+                            <small>Administrador</small>
+                        </div>
+                    </div>
+
+                </div>
+
+            </header>
+
+            <section class="encabezado-dashboard">
+
+                <div>
+                    <h1>Gestión de usuarios</h1>
+
+                    <p>
+                        Administra los usuarios autorizados para acceder
+                        a EasyAccounting.
+                    </p>
+                </div>
+
+                <a class="boton-nuevo" href="registro.html">
+                    + Nuevo usuario
+                </a>
+
+            </section>
+
+            <section class="resumen-grid usuarios-resumen">
+
+                <article class="resumen-card">
+
+                    <div class="resumen-icon usuario-icon">👥</div>
+
+                    <div>
+                        <span>Total de usuarios</span>
+                        <h2>25</h2>
+                        <small>Usuarios registrados</small>
+                    </div>
+
+                </article>
+
+                <article class="resumen-card">
+
+                    <div class="resumen-icon ingreso-icon">✓</div>
+
+                    <div>
+                        <span>Usuarios activos</span>
+                        <h2>22</h2>
+                        <small>Con acceso habilitado</small>
+                    </div>
+
+                </article>
+
+                <article class="resumen-card">
+
+                    <div class="resumen-icon gasto-icon">!</div>
+
+                    <div>
+                        <span>Usuarios inactivos</span>
+                        <h2>3</h2>
+                        <small>Acceso suspendido</small>
+                    </div>
+
+                </article>
+
+            </section>
+
+            <section class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <h2>Usuarios registrados</h2>
+                        <span>Listado general de usuarios del sistema</span>
+                    </div>
+
+                    <select class="filtro-usuarios">
+                        <option>Todos los estados</option>
+                        <option>Activos</option>
+                        <option>Inactivos</option>
+                    </select>
+
+                </div>
+
+                <div class="tabla-responsive">
+
+                    <table class="tabla-dashboard">
+
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Correo</th>
+                                <th>Rol</th>
+                                <th>Estado</th>
+                                <th>Último acceso</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>
+                                    <div class="usuario-tabla">
+                                        <div class="mini-avatar">JD</div>
+                                        <strong>Juan Díaz</strong>
+                                    </div>
+                                </td>
+
+                                <td>juan@easyaccounting.com</td>
+                                <td>Administrador</td>
+
+                                <td>
+                                    <span class="estado-usuario activo-usuario">
+                                        Activo
+                                    </span>
+                                </td>
+
+                                <td>10/07/2026</td>
+
+                                <td>
+                                    <button class="boton-accion editar">
+                                        Editar
+                                    </button>
+
+                                    <button class="boton-accion desactivar">
+                                        Desactivar
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <div class="usuario-tabla">
+                                        <div class="mini-avatar">MP</div>
+                                        <strong>María Pérez</strong>
+                                    </div>
+                                </td>
+
+                                <td>maria@easyaccounting.com</td>
+                                <td>Contadora</td>
+
+                                <td>
+                                    <span class="estado-usuario activo-usuario">
+                                        Activo
+                                    </span>
+                                </td>
+
+                                <td>09/07/2026</td>
+
+                                <td>
+                                    <button class="boton-accion editar">
+                                        Editar
+                                    </button>
+
+                                    <button class="boton-accion desactivar">
+                                        Desactivar
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <div class="usuario-tabla">
+                                        <div class="mini-avatar">CR</div>
+                                        <strong>Carlos Rodríguez</strong>
+                                    </div>
+                                </td>
+
+                                <td>carlos@easyaccounting.com</td>
+                                <td>Auxiliar contable</td>
+
+                                <td>
+                                    <span class="estado-usuario inactivo-usuario">
+                                        Inactivo
+                                    </span>
+                                </td>
+
+                                <td>02/07/2026</td>
+
+                                <td>
+                                    <button class="boton-accion editar">
+                                        Editar
+                                    </button>
+
+                                    <button class="boton-accion activar">
+                                        Activar
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <div class="usuario-tabla">
+                                        <div class="mini-avatar">LS</div>
+                                        <strong>Laura Sánchez</strong>
+                                    </div>
+                                </td>
+
+                                <td>laura@easyaccounting.com</td>
+                                <td>Administradora</td>
+
+                                <td>
+                                    <span class="estado-usuario activo-usuario">
+                                        Activo
+                                    </span>
+                                </td>
+
+                                <td>08/07/2026</td>
+
+                                <td>
+                                    <button class="boton-accion editar">
+                                        Editar
+                                    </button>
+
+                                    <button class="boton-accion desactivar">
+                                        Desactivar
+                                    </button>
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

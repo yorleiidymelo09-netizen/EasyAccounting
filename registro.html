@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EasyAccounting | Registro</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="registro-body">
+
+    <!-- Encabezado -->
+    <header class="inicio-navbar">
+
+        <div class="inicio-logo">
+            <img
+                src="img/logo.png"
+                alt="Logo de EasyAccounting"
+            >
+        </div>
+
+        <nav aria-label="Navegación principal">
+            <a href="index.html">Inicio</a>
+            <a class="enlace-activo" href="registro.html">Registro</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="reportes.html">Reportes</a>
+        </nav>
+
+    </header>
+
+    <!-- Contenido -->
+    <main class="registro-contenedor">
+
+        <section class="registro-tarjeta">
+
+            <div class="registro-encabezado">
+                <h1>Registro de Usuario</h1>
+
+                <p>
+                    Completa la información para crear tu cuenta
+                </p>
+            </div>
+
+            <form
+                class="registro-formulario"
+                action="dashboard.html"
+                method="get"
+            >
+
+                <!-- Nombre -->
+                <div class="registro-campo">
+
+                    <label for="nombre">
+                        Nombre completo
+                    </label>
+
+                    <div class="registro-input">
+                        <span aria-hidden="true">♙</span>
+
+                        <input
+                            type="text"
+                            id="nombre"
+                            name="nombre"
+                            placeholder="Ej: Juan Díaz"
+                            autocomplete="name"
+                            required
+                        >
+                    </div>
+
+                </div>
+
+                <!-- Correo -->
+                <div class="registro-campo">
+
+                    <label for="correo-registro">
+                        Correo electrónico
+                    </label>
+
+                    <div class="registro-input">
+                        <span aria-hidden="true">✉</span>
+
+                        <input
+                            type="email"
+                            id="correo-registro"
+                            name="correo"
+                            placeholder="Ej: juan@correo.com"
+                            autocomplete="email"
+                            required
+                        >
+                    </div>
+
+                </div>
+
+                <!-- Contraseña -->
+                <div class="registro-campo">
+
+                    <label for="clave-registro">
+                        Contraseña
+                    </label>
+
+                    <div class="registro-input">
+                        <span aria-hidden="true">▣</span>
+
+                        <input
+                            type="password"
+                            id="clave-registro"
+                            name="contrasena"
+                            placeholder="Mínimo 8 caracteres"
+                            minlength="8"
+                            autocomplete="new-password"
+                            required
+                        >
+
+                        <button
+                            class="registro-ver-clave"
+                            type="button"
+                            data-target="clave-registro"
+                            aria-label="Mostrar contraseña"
+                        >
+                            ◉
+                        </button>
+                    </div>
+
+                </div>
+
+                <!-- Confirmar contraseña -->
+                <div class="registro-campo">
+
+                    <label for="confirmar-clave">
+                        Confirmar contraseña
+                    </label>
+
+                    <div class="registro-input">
+                        <span aria-hidden="true">▣</span>
+
+                        <input
+                            type="password"
+                            id="confirmar-clave"
+                            name="confirmarContrasena"
+                            placeholder="Repite tu contraseña"
+                            minlength="8"
+                            autocomplete="new-password"
+                            required
+                        >
+
+                        <button
+                            class="registro-ver-clave"
+                            type="button"
+                            data-target="confirmar-clave"
+                            aria-label="Mostrar contraseña"
+                        >
+                            ◉
+                        </button>
+                    </div>
+
+                </div>
+
+                <!-- Rol -->
+                <div class="registro-campo registro-campo-completo">
+
+                    <label for="rol">
+                        Rol
+                    </label>
+
+                    <div class="registro-input">
+                        <span aria-hidden="true">♙+</span>
+
+                        <select
+                            id="rol"
+                            name="rol"
+                            required
+                        >
+                            <option value="" selected disabled>
+                                Seleccione un rol
+                            </option>
+
+                            <option value="administrador">
+                                Administrador
+                            </option>
+
+                            <option value="auxiliar">
+                                Auxiliar contable
+                            </option>
+
+                            <option value="empleado">
+                                Empleado
+                            </option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <!-- Mensaje -->
+                <div class="registro-ayuda registro-campo-completo">
+                    <span aria-hidden="true">i</span>
+
+                    <p>
+                        La contraseña debe tener al menos 8 caracteres.
+                    </p>
+                </div>
+
+                <!-- Botón -->
+                <button
+                    class="registro-boton registro-campo-completo"
+                    type="submit"
+                >
+                    <span>♙+</span>
+                    Registrarse
+                </button>
+
+            </form>
+
+            <p class="registro-iniciar">
+                ¿Ya tienes una cuenta?
+                <a href="index.html">Inicia sesión</a>
+            </p>
+
+        </section>
+
+    </main>
+
+    <script>
+        const botonesClave = document.querySelectorAll(
+            ".registro-ver-clave"
+        );
+
+        botonesClave.forEach((boton) => {
+            boton.addEventListener("click", () => {
+                const campo = document.getElementById(
+                    boton.dataset.target
+                );
+
+                const mostrar = campo.type === "password";
+
+                campo.type = mostrar ? "text" : "password";
+                boton.textContent = mostrar ? "◎" : "◉";
+
+                boton.setAttribute(
+                    "aria-label",
+                    mostrar
+                        ? "Ocultar contraseña"
+                        : "Mostrar contraseña"
+                );
+            });
+        });
+
+        const formulario = document.querySelector(
+            ".registro-formulario"
+        );
+
+        formulario.addEventListener("submit", (evento) => {
+            const clave = document.getElementById(
+                "clave-registro"
+            ).value;
+
+            const confirmacion = document.getElementById(
+                "confirmar-clave"
+            ).value;
+
+            if (clave !== confirmacion) {
+                evento.preventDefault();
+
+                alert(
+                    "Las contraseñas no coinciden. Verifica la información."
+                );
+            }
+        });
+    </script>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

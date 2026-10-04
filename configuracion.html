@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EasyAccounting | Configuración</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="dashboard-body">
+
+    <div class="app-layout">
+
+        <aside class="sidebar">
+
+            <div class="sidebar-logo">
+                <img src="img/logo.png" alt="Logo EasyAccounting">
+            </div>
+
+            <div class="usuario">
+                <div class="avatar">JD</div>
+
+                <div>
+                    <strong>Juan Díaz</strong>
+                    <span>Administrador</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-menu">
+
+                <a href="dashboard.html">
+                    <span>▦</span>
+                    Dashboard
+                </a>
+
+                <a href="usuarios.html">
+                    <span>👥</span>
+                    Gestión de usuarios
+                </a>
+
+                <a href="clientes.html">
+                    <span>🏢</span>
+                    Clientes
+                </a>
+
+                <a href="movimientos.html">
+                    <span>⇄</span>
+                    Movimientos
+                </a>
+
+                <a href="reportes.html">
+                    <span>📊</span>
+                    Reportes
+                </a>
+
+                <a href="facturas.html">
+                    <span>🧾</span>
+                    Facturación
+                </a>
+
+                <a class="activo" href="configuracion.html">
+                    <span>⚙️</span>
+                    Configuración
+                </a>
+
+                <a href="index.html">
+                    <span>↪</span>
+                    Cerrar sesión
+                </a>
+
+            </nav>
+
+        </aside>
+
+        <main class="dashboard-main">
+
+            <header class="topbar">
+
+                <div class="topbar-busqueda">
+                    <input
+                        type="search"
+                        placeholder="Buscar configuración"
+                        aria-label="Buscar configuración"
+                    >
+                </div>
+
+                <div class="topbar-acciones">
+
+                    <button class="notificacion" type="button" aria-label="Notificaciones">
+                        🔔
+                        <span>3</span>
+                    </button>
+
+                    <div class="perfil-usuario">
+                        <div class="perfil-avatar">JD</div>
+
+                        <div>
+                            <strong>Juan Díaz</strong>
+                            <small>Administrador</small>
+                        </div>
+                    </div>
+
+                </div>
+
+            </header>
+
+            <section class="encabezado-dashboard">
+
+                <div>
+                    <h1>Configuración</h1>
+
+                    <p>
+                        Administra los datos generales, preferencias y seguridad
+                        de EasyAccounting.
+                    </p>
+                </div>
+
+                <button class="boton-nuevo" type="button">
+                    Guardar cambios
+                </button>
+
+            </section>
+
+            <section class="configuracion-grid">
+
+                <article class="panel">
+
+                    <div class="panel-header">
+                        <div>
+                            <h2>Datos de la empresa</h2>
+                            <span>Información principal de la organización</span>
+                        </div>
+                    </div>
+
+                    <form class="formulario-configuracion">
+
+                        <div class="campo-formulario">
+                            <label for="empresa">Nombre de la empresa</label>
+                            <input
+                                type="text"
+                                id="empresa"
+                                value="EasyAccounting SAS"
+                            >
+                        </div>
+
+                        <div class="campo-formulario">
+                            <label for="nit">NIT</label>
+                            <input
+                                type="text"
+                                id="nit"
+                                value="901.234.567-8"
+                            >
+                        </div>
+
+                        <div class="campo-formulario">
+                            <label for="correo-empresa">Correo electrónico</label>
+                            <input
+                                type="email"
+                                id="correo-empresa"
+                                value="contacto@easyaccounting.com"
+                            >
+                        </div>
+
+                        <div class="campo-formulario">
+                            <label for="telefono-empresa">Teléfono</label>
+                            <input
+                                type="tel"
+                                id="telefono-empresa"
+                                value="300 123 4567"
+                            >
+                        </div>
+
+                        <div class="campo-formulario">
+                            <label for="direccion-empresa">Dirección</label>
+                            <input
+                                type="text"
+                                id="direccion-empresa"
+                                value="Calle 10 # 20-30"
+                            >
+                        </div>
+
+                        <div class="campo-formulario">
+                            <label for="ciudad-empresa">Ciudad</label>
+                            <input
+                                type="text"
+                                id="ciudad-empresa"
+                                value="Bogotá"
+                            >
+                        </div>
+
+                    </form>
+
+                </article>
+
+                <article class="panel">
+
+                    <div class="panel-header">
+                        <div>
+                            <h2>Preferencias del sistema</h2>
+                            <span>Opciones generales de funcionamiento</span>
+                        </div>
+                    </div>
+
+                    <div class="preferencias-lista">
+
+                        <label class="preferencia-item">
+
+                            <div>
+                                <strong>Moneda principal</strong>
+                                <span>Peso colombiano</span>
+                            </div>
+
+                            <select>
+                                <option>COP - Peso colombiano</option>
+                                <option>USD - Dólar estadounidense</option>
+                                <option>EUR - Euro</option>
+                            </select>
+
+                        </label>
+
+                        <label class="preferencia-item">
+
+                            <div>
+                                <strong>Formato de fecha</strong>
+                                <span>Configuración regional</span>
+                            </div>
+
+                            <select>
+                                <option>DD/MM/AAAA</option>
+                                <option>MM/DD/AAAA</option>
+                                <option>AAAA-MM-DD</option>
+                            </select>
+
+                        </label>
+
+                        <label class="preferencia-item">
+
+                            <div>
+                                <strong>Notificaciones</strong>
+                                <span>Alertas y recordatorios del sistema</span>
+                            </div>
+
+                            <input type="checkbox" checked>
+
+                        </label>
+
+                        <label class="preferencia-item">
+
+                            <div>
+                                <strong>Copias de seguridad automáticas</strong>
+                                <span>Generar respaldo diario</span>
+                            </div>
+
+                            <input type="checkbox" checked>
+
+                        </label>
+
+                    </div>
+
+                </article>
+
+                <article class="panel">
+
+                    <div class="panel-header">
+                        <div>
+                            <h2>Seguridad</h2>
+                            <span>Protección de la cuenta y del sistema</span>
+                        </div>
+                    </div>
+
+                    <div class="seguridad-lista">
+
+                        <div class="seguridad-item">
+                            <div>
+                                <strong>Cambiar contraseña</strong>
+                                <span>Actualiza tu contraseña de acceso</span>
+                            </div>
+
+                            <button type="button" class="boton-secundario-config">
+                                Cambiar
+                            </button>
+                        </div>
+
+                        <div class="seguridad-item">
+                            <div>
+                                <strong>Autenticación en dos pasos</strong>
+                                <span>Agrega una capa adicional de seguridad</span>
+                            </div>
+
+                            <button type="button" class="boton-secundario-config">
+                                Activar
+                            </button>
+                        </div>
+
+                        <div class="seguridad-item">
+                            <div>
+                                <strong>Sesiones activas</strong>
+                                <span>Consulta los dispositivos conectados</span>
+                            </div>
+
+                            <button type="button" class="boton-secundario-config">
+                                Revisar
+                            </button>
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <article class="panel">
+
+                    <div class="panel-header">
+                        <div>
+                            <h2>Información del sistema</h2>
+                            <span>Datos técnicos de EasyAccounting</span>
+                        </div>
+                    </div>
+
+                    <div class="informacion-sistema">
+
+                        <p>
+                            <strong>Versión:</strong>
+                            EasyAccounting 1.0
+                        </p>
+
+                        <p>
+                            <strong>Última actualización:</strong>
+                            10 de julio de 2026
+                        </p>
+
+                        <p>
+                            <strong>Estado del sistema:</strong>
+                            <span class="estado">Operativo</span>
+                        </p>
+
+                        <p>
+                            <strong>Desarrollado por:</strong>
+                            Yorleidy Melo
+                        </p>
+
+                        <p>
+                            <strong>Proyecto:</strong>
+                            Análisis y Desarrollo de Software - SENA
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+        </main>
+
+    </div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

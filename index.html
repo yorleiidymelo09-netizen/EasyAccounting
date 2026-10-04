@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EasyAccounting | Inicio de sesión</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="inicio-body">
+
+    <!-- Encabezado -->
+    <header class="inicio-navbar">
+
+        <div class="inicio-logo">
+            <img
+                src="img/logo.png"
+                alt="Logo de EasyAccounting"
+            >
+        </div>
+
+        <nav aria-label="Navegación principal">
+            <a class="enlace-activo" href="index.html">Inicio</a>
+            <a href="registro.html">Registro</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="reportes.html">Reportes</a>
+        </nav>
+
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="inicio-hero">
+
+        <!-- Presentación -->
+        <section class="inicio-presentacion">
+
+            <img
+                class="logo-principal"
+                src="img/logo-grande.png"
+                alt="Logo principal de EasyAccounting"
+            >
+
+            <div class="linea-verde"></div>
+
+            <h1>
+                Sistema Web de<br>
+                Gestión Contable
+            </h1>
+
+            <div class="linea-verde"></div>
+
+            <p class="descripcion-inicio">
+                Administra ingresos, gastos, usuarios y reportes financieros
+                de manera sencilla, segura y organizada.
+            </p>
+
+            <div class="beneficios">
+
+                <article class="beneficio">
+                    <div class="beneficio-icono">✓</div>
+
+                    <div>
+                        <h3>Seguro</h3>
+                        <p>Protegemos tu información financiera.</p>
+                    </div>
+                </article>
+
+                <article class="beneficio">
+                    <div class="beneficio-icono">▥</div>
+
+                    <div>
+                        <h3>Reportes</h3>
+                        <p>Reportes en tiempo real y al instante.</p>
+                    </div>
+                </article>
+
+                <article class="beneficio">
+                    <div class="beneficio-icono">ϟ</div>
+
+                    <div>
+                        <h3>Rápido</h3>
+                        <p>Gestiona tu contabilidad en un solo lugar.</p>
+                    </div>
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- Inicio de sesión -->
+        <section class="inicio-login" aria-labelledby="titulo-login">
+
+            <h2 id="titulo-login">Inicio de Sesión</h2>
+
+            <form action="dashboard.html" method="get">
+
+                <div class="campo-login">
+                    <label for="correo">Correo electrónico</label>
+
+                    <div class="input-login">
+                        <span aria-hidden="true">✉</span>
+
+                        <input
+                            type="email"
+                            id="correo"
+                            name="correo"
+                            placeholder="juan@correo.com"
+                            autocomplete="email"
+                            required
+                        >
+                    </div>
+                </div>
+
+                <div class="campo-login">
+                    <label for="contrasena">Contraseña</label>
+
+                    <div class="input-login">
+                        <span aria-hidden="true">▣</span>
+
+                        <input
+                            type="password"
+                            id="contrasena"
+                            name="contrasena"
+                            placeholder="********"
+                            autocomplete="current-password"
+                            required
+                        >
+
+                        <button
+                            class="mostrar-contrasena"
+                            type="button"
+                            aria-label="Mostrar contraseña"
+                            onclick="mostrarContrasena()"
+                        >
+                            ◉
+                        </button>
+                    </div>
+                </div>
+
+                <button class="boton-login" type="submit">
+                    <span>↪</span>
+                    Iniciar sesión
+                </button>
+
+            </form>
+
+            <a class="recuperar-enlace" href="error.html">
+                ¿Olvidaste tu contraseña?
+            </a>
+
+            <div class="separador-registro">
+                <span>¿No tienes una cuenta?</span>
+            </div>
+
+            <a class="boton-crear-cuenta" href="registro.html">
+                <span>♙+</span>
+                Crear cuenta
+            </a>
+
+        </section>
+
+    </main>
+
+    <script>
+        function mostrarContrasena() {
+            const campo = document.getElementById("contrasena");
+            const boton = document.querySelector(".mostrar-contrasena");
+
+            const mostrar = campo.type === "password";
+
+            campo.type = mostrar ? "text" : "password";
+            boton.textContent = mostrar ? "◎" : "◉";
+            boton.setAttribute(
+                "aria-label",
+                mostrar ? "Ocultar contraseña" : "Mostrar contraseña"
+            );
+        }
+    </script>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

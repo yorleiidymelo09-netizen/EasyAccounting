@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EasyAccounting | Clientes</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="dashboard-body">
+
+    <div class="app-layout">
+
+        <aside class="sidebar">
+
+            <div class="sidebar-logo">
+                <img src="img/logo.png" alt="Logo EasyAccounting">
+            </div>
+
+            <div class="usuario">
+                <div class="avatar">JD</div>
+
+                <div>
+                    <strong>Juan Díaz</strong>
+                    <span>Administrador</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-menu">
+
+                <a href="dashboard.html">
+                    <span>▦</span>
+                    Dashboard
+                </a>
+
+                <a href="usuarios.html">
+                    <span>👥</span>
+                    Gestión de usuarios
+                </a>
+
+                <a class="activo" href="clientes.html">
+                    <span>🏢</span>
+                    Clientes
+                </a>
+
+                <a href="movimientos.html">
+                    <span>⇄</span>
+                    Movimientos
+                </a>
+
+                <a href="reportes.html">
+                    <span>📊</span>
+                    Reportes
+                </a>
+
+                <a href="facturas.html">
+                    <span>🧾</span>
+                    Facturación
+                </a>
+
+                <a href="index.html">
+                    <span>↪</span>
+                    Cerrar sesión
+                </a>
+
+            </nav>
+
+        </aside>
+
+        <main class="dashboard-main">
+
+            <header class="topbar">
+
+                <div class="topbar-busqueda">
+                    <input
+                         class="buscador-tabla"
+                        type="search"
+                        placeholder="Buscar cliente"
+                        aria-label="Buscar cliente"
+                    >
+                </div>
+
+                <div class="topbar-acciones">
+
+                    <button class="notificacion" type="button" aria-label="Notificaciones">
+                        🔔
+                        <span>3</span>
+                    </button>
+
+                    <div class="perfil-usuario">
+                        <div class="perfil-avatar">JD</div>
+
+                        <div>
+                            <strong>Juan Díaz</strong>
+                            <small>Administrador</small>
+                        </div>
+                    </div>
+
+                </div>
+
+            </header>
+
+            <section class="encabezado-dashboard">
+
+                <div>
+                    <h1>Clientes</h1>
+
+                    <p>
+                        Consulta y administra la información de los clientes registrados.
+                    </p>
+                </div>
+
+                <a class="boton-nuevo" href="#" id="nuevo-cliente">
+                    + Nuevo cliente
+                </a>
+
+            </section>
+
+            <section class="resumen-grid clientes-resumen">
+
+                <article class="resumen-card">
+
+                    <div class="resumen-icon usuario-icon">👥</div>
+
+                    <div>
+                        <span>Total de clientes</span>
+                        <h2>53</h2>
+                        <small>Clientes registrados</small>
+                    </div>
+
+                </article>
+
+                <article class="resumen-card">
+
+                    <div class="resumen-icon ingreso-icon">✓</div>
+
+                    <div>
+                        <span>Clientes activos</span>
+                        <h2>49</h2>
+                        <small>Con relación comercial</small>
+                    </div>
+
+                </article>
+
+                <article class="resumen-card">
+
+                    <div class="resumen-icon gasto-icon">!</div>
+
+                    <div>
+                        <span>Clientes inactivos</span>
+                        <h2>4</h2>
+                        <small>Sin actividad reciente</small>
+                    </div>
+
+                </article>
+
+            </section>
+
+            <section class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <h2>Clientes registrados</h2>
+                        <span>Listado general de clientes</span>
+                    </div>
+
+                    <select class="filtro-usuarios">
+                        <option>Todos los estados</option>
+                        <option>Activos</option>
+                        <option>Inactivos</option>
+                    </select>
+
+                </div>
+
+                <div class="tabla-responsive">
+
+                    <table class="tabla-dashboard">
+
+                        <thead>
+                            <tr>
+                                <th>Cliente</th>
+                                <th>Documento / NIT</th>
+                                <th>Correo</th>
+                                <th>Teléfono</th>
+                                <th>Ciudad</th>
+                                <th>Estado</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>
+                                    <div class="usuario-tabla">
+                                        <div class="mini-avatar">CS</div>
+                                        <strong>Comercial SAS</strong>
+                                    </div>
+                                </td>
+
+                                <td>900123456-1</td>
+                                <td>contacto@comercialsas.com</td>
+                                <td>300 123 4567</td>
+                                <td>Bogotá</td>
+
+                                <td>
+                                    <span class="estado-cliente cliente-activo">
+                                        Activo
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <button class="boton-accion editar">
+                                        Ver
+                                    </button>
+
+                                    <button class="boton-accion desactivar">
+                                        Desactivar
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <div class="usuario-tabla">
+                                        <div class="mini-avatar">DL</div>
+                                        <strong>Distribuciones LTDA</strong>
+                                    </div>
+                                </td>
+
+                                <td>901245789-3</td>
+                                <td>ventas@distribuciones.com</td>
+                                <td>310 987 6543</td>
+                                <td>Medellín</td>
+
+                                <td>
+                                    <span class="estado-cliente cliente-activo">
+                                        Activo
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <button class="boton-accion editar">
+                                        Ver
+                                    </button>
+
+                                    <button class="boton-accion desactivar">
+                                        Desactivar
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <div class="usuario-tabla">
+                                        <div class="mini-avatar">SN</div>
+                                        <strong>Servicios del Norte</strong>
+                                    </div>
+                                </td>
+
+                                <td>800452369-7</td>
+                                <td>info@serviciosnorte.com</td>
+                                <td>320 456 7890</td>
+                                <td>Barranquilla</td>
+
+                                <td>
+                                    <span class="estado-cliente cliente-inactivo">
+                                        Inactivo
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <button class="boton-accion editar">
+                                        Ver
+                                    </button>
+
+                                    <button class="boton-accion activar">
+                                        Activar
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <div class="usuario-tabla">
+                                        <div class="mini-avatar">IA</div>
+                                        <strong>Inversiones ABC</strong>
+                                    </div>
+                                </td>
+
+                                <td>900778899-2</td>
+                                <td>contabilidad@inversionesabc.com</td>
+                                <td>315 246 8100</td>
+                                <td>Cali</td>
+
+                                <td>
+                                    <span class="estado-cliente cliente-activo">
+                                        Activo
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <button class="boton-accion editar">
+                                        Ver
+                                    </button>
+
+                                    <button class="boton-accion desactivar">
+                                        Desactivar
+                                    </button>
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+<script>
+document.getElementById("nuevo-cliente").addEventListener("click", function(evento) {
+    evento.preventDefault();
+    alert("Formulario para registrar un nuevo cliente");
+});
+</script>
+<script src="script.js"></script>
+
+</body>
+
+</html>

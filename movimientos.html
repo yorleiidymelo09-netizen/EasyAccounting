@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EasyAccounting | Movimientos contables</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="dashboard-body">
+
+    <div class="app-layout">
+
+        <aside class="sidebar">
+
+            <div class="sidebar-logo">
+                <img src="img/logo.png" alt="Logo EasyAccounting">
+            </div>
+
+            <div class="usuario">
+                <div class="avatar">JD</div>
+
+                <div>
+                    <strong>Juan Díaz</strong>
+                    <span>Administrador</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-menu">
+
+                <a href="dashboard.html">
+                    <span>▦</span>
+                    Dashboard
+                </a>
+
+                <a href="usuarios.html">
+                    <span>👥</span>
+                    Gestión de usuarios
+                </a>
+
+                <a class="activo" href="movimientos.html">
+                    <span>⇄</span>
+                    Movimientos
+                </a>
+
+                <a href="reportes.html">
+                    <span>📊</span>
+                    Reportes
+                </a>
+
+                <a href="index.html">
+                    <span>↪</span>
+                    Cerrar sesión
+                </a>
+
+            </nav>
+
+        </aside>
+
+        <main class="dashboard-main">
+
+            <header class="dashboard-header">
+
+                <div>
+                    <h1>Movimientos contables</h1>
+                    <p>Registra y consulta los ingresos y gastos de la organización.</p>
+                </div>
+
+                <a class="boton-volver" href="dashboard.html">
+                    Volver al Dashboard
+                </a>
+
+            </header>
+
+            <section class="movimientos-layout">
+
+                <article class="panel formulario-movimiento">
+
+                    <div class="panel-header">
+                        <div>
+                            <h2>Nuevo movimiento</h2>
+                            <span>Completa la información solicitada</span>
+                        </div>
+                    </div>
+
+                    <form>
+
+                        <div class="campo-formulario">
+                            <label for="tipo">Tipo de movimiento</label>
+
+                            <select id="tipo" required>
+                                <option value="">Selecciona una opción</option>
+                                <option>Ingreso</option>
+                                <option>Gasto</option>
+                            </select>
+                        </div>
+
+                        <div class="campo-formulario">
+                            <label for="concepto">Concepto</label>
+
+                            <input
+                                type="text"
+                                id="concepto"
+                                placeholder="Ejemplo: pago de servicios"
+                                required
+                            >
+                        </div>
+
+                        <div class="campo-formulario">
+                            <label for="categoria">Categoría</label>
+
+                            <select id="categoria" required>
+                                <option value="">Selecciona una categoría</option>
+                                <option>Ventas</option>
+                                <option>Servicios</option>
+                                <option>Nómina</option>
+                                <option>Arriendo</option>
+                                <option>Servicios públicos</option>
+                                <option>Otros</option>
+                            </select>
+                        </div>
+
+                        <div class="campo-formulario">
+                            <label for="valor">Valor</label>
+
+                            <input
+                                type="number"
+                                id="valor"
+                                min="1"
+                                placeholder="0"
+                                required
+                            >
+                        </div>
+
+                        <div class="campo-formulario">
+                            <label for="fecha">Fecha</label>
+
+                            <input
+                                type="date"
+                                id="fecha"
+                                required
+                            >
+                        </div>
+
+                        <div class="campo-formulario">
+                            <label for="descripcion">Descripción</label>
+
+                            <textarea
+                                id="descripcion"
+                                rows="4"
+                                placeholder="Escribe una breve descripción"
+                            ></textarea>
+                        </div>
+
+                        <button type="submit" class="boton-guardar">
+                            Guardar movimiento
+                        </button>
+
+                    </form>
+
+                </article>
+
+                <article class="panel resumen-movimientos">
+
+                    <div class="panel-header">
+                        <div>
+                            <h2>Resumen del mes</h2>
+                            <span>Julio de 2026</span>
+                        </div>
+                    </div>
+
+                    <div class="resumen-financiero ingreso-resumen">
+                        <span>Total de ingresos</span>
+                        <strong>$18.500.000</strong>
+                    </div>
+
+                    <div class="resumen-financiero gasto-resumen">
+                        <span>Total de gastos</span>
+                        <strong>$12.800.000</strong>
+                    </div>
+
+                    <div class="resumen-financiero balance-resumen">
+                        <span>Balance disponible</span>
+                        <strong>$5.700.000</strong>
+                    </div>
+
+                    <div class="informacion-adicional">
+                        <h3>Información</h3>
+
+                        <p>
+                            Los movimientos registrados serán utilizados para
+                            generar balances y reportes financieros.
+                        </p>
+                    </div>
+
+                </article>
+
+            </section>
+
+            <section class="panel movimientos-panel">
+
+                <div class="panel-header">
+                    <div>
+                        <h2>Historial de movimientos</h2>
+                        <span>Últimos registros contables</span>
+                    </div>
+
+                    <input
+                        class="buscador-tabla"
+                        type="search"
+                        placeholder="Buscar movimiento"
+                    >
+                </div>
+
+                <div class="tabla-responsive">
+
+                    <table class="tabla-dashboard">
+
+                        <thead>
+                            <tr>
+                                <th>Fecha</th>
+                                <th>Concepto</th>
+                                <th>Categoría</th>
+                                <th>Tipo</th>
+                                <th>Valor</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>10/07/2026</td>
+                                <td>Venta de servicios</td>
+                                <td>Ventas</td>
+                                <td><span class="tipo ingreso">Ingreso</span></td>
+                                <td>$2.500.000</td>
+                                <td><span class="estado">Completado</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>09/07/2026</td>
+                                <td>Pago de energía</td>
+                                <td>Servicios públicos</td>
+                                <td><span class="tipo gasto">Gasto</span></td>
+                                <td>$480.000</td>
+                                <td><span class="estado">Completado</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>08/07/2026</td>
+                                <td>Servicio contable</td>
+                                <td>Servicios</td>
+                                <td><span class="tipo ingreso">Ingreso</span></td>
+                                <td>$920.000</td>
+                                <td><span class="estado">Completado</span></td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
